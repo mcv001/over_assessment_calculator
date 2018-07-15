@@ -1,0 +1,72 @@
+<html><head>
+<META NAME="description" CONTENT="Estimates Over Assessment of WHC Independent Living Units">
+<META NAME="generator" CONTENT="manual via gVim">
+<META NAME="author" CONTENT="M Seavey">
+<META NAME="copyright" CONTENT="Copyright © 2018 by M Seavey - All Rights Reserved">
+<meta charset="utf-8"/>
+<title>WHC Independent Living Unit - Over Assessment Estimater</title>
+<script lanuage="JavaScript">
+<!-- hide scriptfrom non javacsript capable browsers
+var require = "undefined";    
+function overcalc(form) {
+var pdate = parseInt(form.pdate.value);
+var sprice = parseInt(form.sprice.value);
+var isarpt = parseInt(form.isarpt.value);
+var pluga = parseInt(form.pluga.value);
+// Below normally would not need to be changed
+var hpriced = 400;
+var numhd = 30;
+var hdcost = 0;
+hdcost = hpriced * numhd;
+var tfee = 0;
+tfee = parseInt(sprice * 0.03);
+var rpct = 11;
+var rfee = 0;
+rfee = parseInt(sprice * 0.11);
+if (isarpt == "1") { rpct = 25 };
+if (isarpt == "1") { rfee = parseInt(sprice * 0.25) };
+var efee = 0;
+efee = 5000;
+var miscest =0;
+miscest = 880;
+var allofit = 0;
+allofit = hdcost + tfee + rfee + pluga + efee + miscest;
+var realv = 0;
+realv = sprice - allofit;
+// 
+// Start output for simplifed approach
+pageout = " <center><h2>WHC Independent Living Unit - Over Assessment Estimate - V1</h2><p>Copyright 2010 by M Seavey - All Rights Reserved<p><p> ";
+pageout += "</center>Owner ________________________ purchased address ________________________________ on ________________ for $ " + sprice + " dollars.";
+pageout += "<p><p>The following services and items bundled with this purchase are not land, buildings, or improvements<p>";
+pageout += "and this by Iowa Code cannot be assessed for property tax purposes.<p><p>";
+pageout += numhd + " days prepaid healcare at $ " + hpriced + " dollars per day = $ " + hdcost + " dollars.<p>";
+pageout += "Transfer fee of 3% = " + tfee + " dollars.<p>Refurbish fee of " + rpct + "% = $ " + rfee + " dollars.<p>";
+pageout += "Plug Appliances cost = " + pluga + " dollars.<p>Transferable Entry fee =  $ " + efee + " dollars.<p>";
+pageout += "Personal property = $ " + miscest + " dollars.<p><p>";
+pageout += "Non-assessable total is equal to $ " + allofit + " dollars.<p><p>";
+pageout += "Real estate purchased on date above only had a market value of $ " + realv + " dollars<p>";
+pageout += " and should not be assessed for any higher amount.<p>";
+pageout += "<p><p><center>Print this pager and fill in the blanks above for your property.<p>";
+pageout += "Use your browser Back to run again with new input values.</center><p>";
+document.write(pageout)};
+//-->
+</script><noscript>Your browser does not support JavaScript so this script cannot run!</noscript>
+<title>WHC Independent Living Unit - Over Assessment Estimate</title>
+</head><body><form><center>
+<h1>WHC Independent Living Unit - Over Assessment Estimate - v14-Jul-2018</h1>
+<h2>Copyright 2018 by Mike Seavey - All Rights Reserved</h2>
+</center><p><p><h3>
+Enter the date you bought your unit (ddmmyyyy):
+<INPUT NAME="pdate" Type="text" VALUE="00000000" MAXLENGTH="8" SIZE=8><p>
+Enter the price you paid for your unit in whole dollars:
+<INPUT NAME="sprice" VALUE="0" MAXLENGTH="7" SIZE=7><p>
+Enter 1 if your unit is an apartment or condo:
+<INPUT NAME="isarpt" Type="text"  VALUE="0" MAXLENGTH="1" SIZE=1><p>
+Enter whole dollar amount you paid for appliances:
+<INPUT NAME="pluga" VALUE="0" MAXLENGTH="4" SIZE=4><p>
+<p><center>
+Click "Calculate button below to display assessment over charge estimate on a new web page:<p>
+<INPUT NAME="calc" VALUE="Calculate" TYPE=BUTTON
+onCLICK="overcalc(this.form);" /><p></h3></center><p>
+</form>
+</body></html>
